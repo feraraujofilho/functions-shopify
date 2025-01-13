@@ -32,7 +32,7 @@ export function run(input) {
     (line) => !!line.bundleId?.value === false,
   );
 
-  console.log("INPUT", input.cartTransform);
+  // console.log("INPUT", input.cartTransform);
 
   return {
     operations: [
