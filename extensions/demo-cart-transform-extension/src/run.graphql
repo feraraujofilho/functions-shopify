@@ -1,0 +1,27 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      bundleId: attribute(key: "_bundleId") {
+        value
+      }
+      cost {
+        totalAmount {
+          amount
+        }
+      }
+      merchandise {
+        ... on ProductVariant {
+          id
+          bundleFee: metafield(namespace: "custom", key: "bundle_fee") {
+            value
+          }
+          product {
+            title
+          }
+        }
+      }
+    }
+  }
+}
